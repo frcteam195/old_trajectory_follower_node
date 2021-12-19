@@ -151,6 +151,8 @@ void trajectory_follower_loop()
             output.acceleration.angular.z = 0.0;
         }
 
+        output.traj_follow_active = planning_active;
+
         target_traj_publisher.publish(output);
     }
 }

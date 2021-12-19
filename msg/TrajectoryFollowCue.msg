@@ -1,2 +1,3 @@
 geometry_msgs/Twist velocity
 geometry_msgs/Twist acceleration
+bool traj_follow_active
