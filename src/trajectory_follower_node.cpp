@@ -175,7 +175,7 @@ int main(int argc, char **argv)
 
 	node = &n;
 
-	ros::Subscriber modeOverride = node->subscribe("/something/teb_feedback", 10, feedback_msg_callback);
+	ros::Subscriber modeOverride = node->subscribe("/teb_feedback", 10, feedback_msg_callback);
 
 	std::thread trajectory_follower_thread(trajectory_follower_loop);
 
