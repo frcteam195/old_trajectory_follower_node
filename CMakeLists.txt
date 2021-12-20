@@ -118,8 +118,6 @@ catkin_package(
 include_directories(
 # include
  ${catkin_INCLUDE_DIRS}
- ${CMAKE_SOURCE_DIR}/../../../third_party_libs/CKROSlibzmq/include
- ${CMAKE_SOURCE_DIR}/../../../third_party_libs/CKROSprotobuf/src
  ${CMAKE_SOURCE_DIR}/../../../third_party_libs/ROSProtoDef2022/out
 )
 
