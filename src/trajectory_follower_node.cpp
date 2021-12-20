@@ -22,7 +22,7 @@ void feedback_msg_callback(const teb_local_planner::FeedbackMsg &msg)
     std::lock_guard<std::mutex> guard(traj_follow_mutex);
     start_time = ros::Time::now().toNSec();
     for(std::vector<teb_local_planner::TrajectoryPointMsg>::const_iterator i =
-           msg.trajectories[msg.selected_trajectory_idx].trajectory.begin();
+            msg.trajectories[msg.selected_trajectory_idx].trajectory.begin();
         i != msg.trajectories[msg.selected_trajectory_idx].trajectory.end();
         i++)
     {
@@ -89,11 +89,13 @@ void trajectory_follower_loop()
                   current_time > (*active_trajectory_pose).first)
             {
                 active_trajectory_pose++;
+
             }
             if(active_trajectory_pose != active_trajectory.end())
             {
                 active_point = (*active_trajectory_pose).second;
                 prev_point = (*active_trajectory_pose).second;
+                prev_point.time_from_start = ros::Duration(0);
 
                 planning_active = true;
 
